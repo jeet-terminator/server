@@ -1,14 +1,26 @@
 import 'url-pattern';
-import { html , render } from "@lithium-framework/core-dom";
-
-import { DesignSystem } from "@microsoft/fast-foundation"
-import { allComponents } from '@microsoft/fast-components';
-
-DesignSystem.getOrCreate().register( allComponents );
-
-import './index.css';
-import '../router';
+import { useEffect } from 'react';
 
 export default function Home(){
-  render( html`<main-application></main-application>` , document.body );
+
+  useEffect(() => {
+
+    Promise.all([
+      import("@lithium-framework/core-dom"),
+      import("@microsoft/fast-foundation"),
+      import('@microsoft/fast-components'),
+      import('../router'),
+      import('./index.css')
+    ])
+    .then(([{ html , render } , { DesignSystem } , { allComponents }]) => {
+
+      DesignSystem.getOrCreate().register( allComponents );
+      render( html`<main-application></main-application>` , document.body );
+
+    })
+
+  }, []);
+  
+  return null;
+
 }
