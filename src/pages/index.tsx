@@ -1,4 +1,3 @@
-import 'url-pattern';
 import { useEffect } from 'react';
 
 export default function Home(){
@@ -9,8 +8,9 @@ export default function Home(){
       import("@lithium-framework/core-dom"),
       import("@microsoft/fast-foundation"),
       import('@microsoft/fast-components'),
+      import('url-pattern'),
       import('../router'),
-      import('./index.css')
+      import('./index.css'),
     ])
     .then(([{ html , render } , { DesignSystem } , { allComponents }]) => {
 
