@@ -1,0 +1,21 @@
+{
+  // This file is not used in compilation. It is here just for a nice editor experience.
+  "extends": "@docusaurus/tsconfig",
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES6",
+    "declaration": true,
+    "sourceMap": true,
+    "removeComments": false,
+    "preserveConstEnums" : true,
+    "skipLibCheck": true,
+    "moduleResolution":"node",
+    "strict": false,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  }
+}
